@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: javagithub-deploy
+  labels:
+    name: tomcat
+    role: webserver
+spec:
+  replicas: 3
+  selector:
+     matchLabels:
+       name: tomcat
+       role: webserver
+  template:
+    metadata:
+      name: tomcat-pod
+      labels: 
+        name: tomcat
+        role: webserver
+    spec:
+      containers:
+      - name: tomcat
+        image: javagithub:latest
+        ports:
+        - containerPort: 8080
+  
+      
