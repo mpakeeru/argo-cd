@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: tomcat
-        image: mamathasama/javagithub:build-48
+        image: mamathasama/javagithub:build-49
         ports:
         - containerPort: 8080
   
